@@ -1,0 +1,135 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+   max-width: 100%;
+   background-image: url(img/bg-perpus.jpg);
+   background-size: cover;
+   font-family: 'Montserrat', sans-serif;
+}
+
+/* Perpus */
+.perpus {
+   background-color: rgba(164, 25, 111, 0.304);
+   overflow: hidden;
+}
+
+#berhasil {
+   display: none;
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
+/* Animasi untuk alert diisi */
+#diisi {
+   display: none;
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.perpus .row {
+   height: 100%;
+}
+
+.perpus form {
+   background-color: rgba(0, 0, 0, 0.504);
+   border-radius: 5px;
+}
+
+.perpus form label {
+   color: white;
+   font-weight: bold;
+}
+
+.perpus h1 {
+   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.299);
+}
+
+/* Survey */
+.popup {
+   animation: fadeIn 0.3s ease-in-out;
+   display: none;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+.popup.fade-out {
+   /* Tambahkan animasi untuk menghilang */
+   animation: fadeOut 0.3s ease-in-out;
+}
+
+@keyframes fadeOut {
+   0% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+   }
+}
+
+.popup.show {
+   display: block;
+   opacity: 1;
+}
+
+.popup.hide {
+   opacity: 0;
+   pointer-events: none;
+}
+
+.popup .emot {
+   height: 100vh;
+}
+
+.popup .col-lg-7 {
+   background-color: white;
+   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.499);
+}
+
+.popup .col-lg-3 a {
+   text-decoration: none;
+}
+
+.popup .col-lg-3 h4 {
+   color: rgb(255, 255, 255);
+}
+
+.popup .orange {
+   background-color: rgb(210, 143, 17);
+}
+
+.popup .col-lg-3 {
+   transition: .3s all;
+}
+
+.popup .col-lg-3:hover {
+   transform: translateY(-8px);
+}
+
+/* Hasil Survey */
+.button-survey .survey {
+   background-color: #B38001;
+   color: white;
+   transition: .4s all;
+}
+
+.button-survey .survey:hover {
+   transform: scale(.9);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+   .popup .judul-survey {
+      font-size: 1.2em;
+   }
+}
