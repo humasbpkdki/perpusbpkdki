@@ -142,15 +142,26 @@ pilihSurveyLinks.forEach(link => {
 });
 
 // Total Voting
-// Dapatkan elemen-elemen dengan id yang ingin dijumlahkan
 const sangatPuasTd = document.getElementById('sangatPuas');
 const puasTd = document.getElementById('puas');
 const cukupTd = document.getElementById('cukup');
 const tidakPuasTd = document.getElementById('tidakPuas');
 
-// Hitung jumlah nilai dari semua elemen tersebut
+// Hitung total dari semua elemen tersebut
 const total = parseInt(sangatPuasTd.textContent) + parseInt(puasTd.textContent) + parseInt(cukupTd.textContent) + parseInt(tidakPuasTd.textContent);
+
+// Hitung persentase untuk setiap nilai
+const persenSangatPuas = (parseInt(sangatPuasTd.textContent) / total) * 100;
+const persenPuas = (parseInt(puasTd.textContent) / total) * 100;
+const persenCukup = (parseInt(cukupTd.textContent) / total) * 100;
+const persenTidakPuas = (parseInt(tidakPuasTd.textContent) / total) * 100;
+
+// Tampilkan hasil persentase di dalam kurung pada elemen-elemen tabel
+sangatPuasTd.textContent = sangatPuasTd.textContent + ' (' + persenSangatPuas.toFixed(2) + '%)';
+puasTd.textContent = puasTd.textContent + ' (' + persenPuas.toFixed(2) + '%)';
+cukupTd.textContent = cukupTd.textContent + ' (' + persenCukup.toFixed(2) + '%)';
+tidakPuasTd.textContent = tidakPuasTd.textContent + ' (' + persenTidakPuas.toFixed(2) + '%)';
 
 // Tampilkan hasil jumlah di elemen dengan id "total"
 const totalTd = document.getElementById('total');
-totalTd.textContent = total.toString();
+totalTd.textContent = total.toString() + ' (100%)';
