@@ -12,7 +12,7 @@ tombolSurvey.addEventListener('click', function (e) {
    e.preventDefault();
    const popup = document.querySelector('.popup');
    popup.style.display = 'block';
- });
+});
 popup.style.display = 'none';
 
 form.addEventListener('submit', e => {
@@ -152,21 +152,30 @@ const puasTd = document.getElementById('puas');
 const cukupTd = document.getElementById('cukup');
 const tidakPuasTd = document.getElementById('tidakPuas');
 
+// Fungsi untuk mengganti nilai NaN dengan 0 dan format persentase
+function formatValue(value, total) {
+   if (isNaN(value)) {
+      return `0 Votes (0%)`;
+   }
+   const percentage = total === 0 ? 0 : (value / total) * 100;
+   return `${value} Votes (${percentage.toFixed(0)}%)`;
+}
+
+// Mengambil nilai-nilai
+const sangatPuasValue = parseInt(sangatPuasTd.textContent);
+const puasValue = parseInt(puasTd.textContent);
+const cukupValue = parseInt(cukupTd.textContent);
+const tidakPuasValue = parseInt(tidakPuasTd.textContent);
+
 // Hitung total dari semua elemen tersebut
-const total = parseInt(sangatPuasTd.textContent) + parseInt(puasTd.textContent) + parseInt(cukupTd.textContent) + parseInt(tidakPuasTd.textContent);
+const total = sangatPuasValue + puasValue + cukupValue + tidakPuasValue;
 
-// Hitung persentase untuk setiap nilai dan bulatkan
-const persenSangatPuas = Math.round((parseInt(sangatPuasTd.textContent) / total) * 100);
-const persenPuas = Math.round((parseInt(puasTd.textContent) / total) * 100);
-const persenCukup = Math.round((parseInt(cukupTd.textContent) / total) * 100);
-const persenTidakPuas = Math.round((parseInt(tidakPuasTd.textContent) / total) * 100);
-
-// Tampilkan hasil persentase dalam bilangan bulat di dalam kurung pada elemen-elemen tabel
-sangatPuasTd.textContent = sangatPuasTd.textContent + ' Votes ' + '(' + persenSangatPuas + '%)';
-puasTd.textContent = puasTd.textContent + ' Votes ' + '(' + persenPuas + '%)';
-cukupTd.textContent = cukupTd.textContent + ' Votes ' + '(' + persenCukup + '%)';
-tidakPuasTd.textContent = tidakPuasTd.textContent + ' Votes ' + '(' + persenTidakPuas + '%)';
+// Format dan tampilkan hasil dalam tabel
+sangatPuasTd.textContent = formatValue(sangatPuasValue, total);
+puasTd.textContent = formatValue(puasValue, total);
+cukupTd.textContent = formatValue(cukupValue, total);
+tidakPuasTd.textContent = formatValue(tidakPuasValue, total);
 
 // Tampilkan hasil jumlah di elemen dengan id "total"
 const totalTd = document.getElementById('total');
-totalTd.textContent = total.toString() + ' Votes ' + ' (100%)';
+totalTd.textContent = `${total} Votes (100%)`;
