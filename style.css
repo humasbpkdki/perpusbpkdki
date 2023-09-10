@@ -49,6 +49,11 @@ body {
    width: 270px;
    border-radius: 7px;
    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.377);
+   transition: .4s all;
+}
+
+.perpus .tombol-survey img:hover {
+   transform: scale(.9);
 }
 
 /* Survey */

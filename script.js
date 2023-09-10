@@ -9,14 +9,10 @@ const popup = document.querySelector('.popup');
 const tombolSurvey = document.getElementById('tombolSurvey');
 
 tombolSurvey.addEventListener('click', function (e) {
-   e.preventDefault(); // Ini mencegah tindakan bawaan dari link
- 
-   // Selanjutnya, Anda perlu menampilkan class "popup" dengan mengubah properti "style" dari elemen tersebut:
+   e.preventDefault();
    const popup = document.querySelector('.popup');
-   popup.style.display = 'block'; // Menampilkan popup
+   popup.style.display = 'block';
  });
- 
-// Sembunyikan popup secara default
 popup.style.display = 'none';
 
 form.addEventListener('submit', e => {
