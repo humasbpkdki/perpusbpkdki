@@ -10,7 +10,7 @@ body {
 
 /* Perpus */
 .perpus {
-   background-color: rgba(164, 25, 111, 0.304);
+   background-color: rgba(164, 25, 111, 0.416);
    overflow: hidden;
 }
 
@@ -20,7 +20,6 @@ body {
    transition: opacity 0.5s ease-in-out;
 }
 
-/* Animasi untuk alert diisi */
 #diisi {
    display: none;
    opacity: 0;
@@ -34,6 +33,7 @@ body {
 .perpus form {
    background-color: rgba(0, 0, 0, 0.504);
    border-radius: 5px;
+   backdrop-filter: blur(3px);
 }
 
 .perpus form label {
@@ -45,11 +45,22 @@ body {
    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.299);
 }
 
+.perpus .tombol-survey img {
+   width: 270px;
+   border-radius: 7px;
+   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.377);
+}
+
 /* Survey */
 .popup {
    animation: fadeIn 0.3s ease-in-out;
    display: none;
    background-color: rgba(0, 0, 0, 0.599);
+   overflow: hidden;
+}
+
+.popup .pilih-survey img {
+   width: 100px;
 }
 
 @keyframes fadeIn {
@@ -131,5 +142,11 @@ body {
 @media (max-width: 576px) {
    .popup .judul-survey {
       font-size: 1.2em;
+   }
+}
+
+@media (max-width: 400px) {
+   .popup .pilih-survey img {
+      width: 80px;
    }
 }

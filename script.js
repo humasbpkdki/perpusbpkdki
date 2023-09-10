@@ -6,7 +6,16 @@ const btnLoading = document.querySelector('.btn-loading');
 const alertBerhasil = document.getElementById('berhasil');
 const alertDiisi = document.getElementById('diisi');
 const popup = document.querySelector('.popup');
+const tombolSurvey = document.getElementById('tombolSurvey');
 
+tombolSurvey.addEventListener('click', function (e) {
+   e.preventDefault(); // Ini mencegah tindakan bawaan dari link
+ 
+   // Selanjutnya, Anda perlu menampilkan class "popup" dengan mengubah properti "style" dari elemen tersebut:
+   const popup = document.querySelector('.popup');
+   popup.style.display = 'block'; // Menampilkan popup
+ });
+ 
 // Sembunyikan popup secara default
 popup.style.display = 'none';
 
