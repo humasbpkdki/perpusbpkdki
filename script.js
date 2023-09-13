@@ -55,7 +55,7 @@ form.addEventListener('submit', e => {
                setTimeout(() => {
                   alertBerhasil.style.display = 'none';
                }, 500);
-            }, 4000);
+            }, 3000);
 
             // Tampilkan popup setelah 4 detik
             setTimeout(() => {
@@ -64,7 +64,7 @@ form.addEventListener('submit', e => {
                popup.style.display = 'block';
                // Tandai bahwa popup telah ditampilkan
                localStorage.setItem('popupShown', 'true');
-            }, 4000);
+            }, 2000);
          })
          .catch(error => {
             console.error('Error!', error.message);
