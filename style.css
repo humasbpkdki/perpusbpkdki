@@ -1,11 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-@font-face {
-   font-family: "Open 24 Dislay St";
-   src: url('font/Open\ 24\ Display\ St.ttf');
- }
-
 body {
    max-width: 100%;
    background-image: url(img/bg-perpus.jpg);
