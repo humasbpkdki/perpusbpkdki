@@ -1,6 +1,11 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+@font-face {
+   font-family: "Open 24 Dislay St";
+   src: url('font/Open\ 24\ Display\ St.ttf');
+ }
+
 body {
    max-width: 100%;
    background-image: url(img/bg-perpus.jpg);
@@ -43,6 +48,13 @@ body {
 
 .perpus h1 {
    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.299);
+   color: rgba(255, 255, 255, 0.951);
+}
+
+.perpus .marquee-container {
+   background-color: rgba(0, 0, 0, 0.504);
+   border-radius: 5px;
+   backdrop-filter: blur(3px);
 }
 
 .perpus .tombol-survey img {
